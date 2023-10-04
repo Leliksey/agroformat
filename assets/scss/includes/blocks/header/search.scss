@@ -1,0 +1,11 @@
+.search {
+    padding: 0 15px;
+    border-left: 1px solid #ffffff1a;
+    & > img {
+        width: 20px;
+        height: 20px;
+    }
+    &__modal {
+        display: none;
+    }
+}

@@ -1,0 +1,39 @@
+.cart {
+    padding-left: 15px;
+    border-left: 1px solid #ffffff1a;
+    & > img {
+        width: 29px;
+        height: 29px;
+    }
+    &__modal {
+        display: none;
+    }
+    &__item {
+        &-group {
+        }
+        &-remove {
+            width: 10px;
+            height: 10px;
+        }
+    }
+    &__list {
+    }
+    &__product-name {
+    }
+    &__product-articul {
+    }
+    &__bottom {
+        &-group {
+        }
+        &-text {
+        }
+        &-total {
+        }
+    }
+    &__button {
+        & img {
+            width: 16px;
+            height: 16px;
+        }
+    }
+}

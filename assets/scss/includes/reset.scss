@@ -131,7 +131,7 @@ a {
 	text-transform: initial;
 	color: unset;
 	&:focus {
-		color: #C17465;
+		color: blueviolet;
 	}
 }
 button {
@@ -161,9 +161,9 @@ button {
 	transform: rotateZ(180deg);
 }
 .container {
-	max-width: 1440px;
+	max-width: 1920px;
 	margin: auto;
-	padding: 0 133px 0 135px;
+	padding: 0 50px;
 	@include max-xl {
 		padding: 0 35px;
 	}
@@ -178,53 +178,15 @@ button {
 	display: flex;
 	// align-items: center;
 }
-.owl-nav {
-	display: none;
-}
-.owl-dots {
-	display: none;
-}
-.slick-arrow {
-	display: none !important;
-}
-.slick-dots {
-	display: none !important;
-}
-.custom-button {
-	background: #c17465;
-	border-radius: 5px;
-	color: #fff;
-}
 .row-rewerse {
 	flex-direction: row-reverse;
 }
 .opacity0 {
 	opacity: 0;
 }
-.catalog__active {
-	margin-top: 11px !important;
-}
 ::-webkit-scrollbar {
 	width: 0px;
 	background: rgba(255, 255, 255, 0);
-}
-.sectionTitle {
-	font-weight: 700;
-	font-size: 36px;
-	line-height: 42px;
-	color: #555555;
-	@include max-md {
-		font-size: 24px;
-		line-height: 28px;
-	}
-}
-.btn__next {
-	width: 13px;
-	position: absolute;
-	right: 30px;
-	top: 0;
-	bottom: 0;
-	margin: auto;
 }
 select {
 	-moz-appearance: none;

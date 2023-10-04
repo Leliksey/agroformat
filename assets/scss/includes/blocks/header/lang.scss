@@ -1,0 +1,16 @@
+.current-lang img {
+    width: 18px;
+    height: 12px;
+}
+.lang {
+    padding-right: 15px;
+    &__list {
+        display: none;
+    }
+    &__item {
+        & img {
+            width: 20px;
+            height: 14px;
+        }
+    }
+}
