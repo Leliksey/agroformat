@@ -102,7 +102,7 @@ section {
 	display: block;
 }
 body {
-	font-family: "Raleway", sans-serif;
+	font-family: "Unbounded", sans-serif;
 }
 ol,
 ul {
@@ -194,4 +194,15 @@ select {
 }
 select::-ms-expand {
 	display: none;
+}
+.customButton {
+	font-family: Geometria;
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 20px;
+	padding: 15px;
+	width: 100%;
+	color: #fff;
+	background-color: #088AF8;
+	text-transform: uppercase;
 }

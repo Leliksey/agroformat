@@ -1,19 +1,76 @@
 .login {
     padding: 0 15px;
     border-left: 1px solid #ffffff1a;
-    & > img {
-        width: 26px;
-        height: 26px;
+    cursor: pointer;
+    position: relative;
+    &:hover path {
+        fill: #1e98ff;
     }
     &__modal {
-        display: none;
+        display: block;
+        position: absolute;
+        top: 65px;
+        right: 0;
+        padding: 20px;
+        background-color: #313e45e5;
+        &-title {
+            font-size: 22px;
+            font-weight: 700;
+            line-height: 27px;
+            color: #fff;
+            text-transform: uppercase;
+            width: max-content;
+        }
+        & input {
+            background-color: #97979742;
+            padding: 18px 0;
+            margin-top: 18px;
+            font-size: 12px;
+            font-weight: 200;
+            line-height: 15px;
+            width: -webkit-fill-available;
+            color: #fff;
+            border: none;
+            outline: none;
+        }
+        & input::placeholder {
+            background-color: #97979742;
+            padding: 18px 20px;
+            margin-top: 18px;
+            font-size: 12px;
+            font-weight: 200;
+            line-height: 15px;
+            color: #fff;
+        }
         &-group {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 8px;
+            column-gap: 10px;
             & img {
                 width: 40px;
                 height: 40px;
             }
+            & > a {
+                min-width: max-content;
+            }
+        }
+        &-checkbox {
+            display: flex;
+            align-items: center;
+            & > span {
+                min-width: max-content;
+                color: #fff;
+                font-size: 12px;
+                font-weight: 300;
+                line-height: 15px;
+            }
         }
         &-form {
+            margin-top: 15px;
+            max-width: 289px;
+            width: 100%;
             & button {
                 & img {
                     width: 22px;
@@ -21,6 +78,32 @@
                 }
             }
         }
+        &-customButton {
+            margin-top: 20px;
+            position: relative;
+            & img {
+                position: absolute;
+                right: 20px;
+            }
+        }
+        &-text {
+            font-size: 12px;
+            font-weight: 300;
+            line-height: 15px;
+            color: #fff;
+            &.reg {
+                border-bottom: 1px solid #fff;
+                color: #0E90FF;
+                border-color: #0E90FF;
+            }
+        }
+    }
+    &__forgot {
+        font-size: 12px;
+        font-weight: 300;
+        line-height: 15px;
+        color: #fff;
+        border-bottom: 1px solid #fff;
     }
 }
 .cabinet {
@@ -31,4 +114,37 @@
             height: 25px;
         }
     }
+}
+/* для элемента input c type="checkbox" */
+.custom-checkbox > input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+/* для элемента label, связанного с .custom-checkbox */
+.custom-checkbox > span {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+}
+
+/* создание в label псевдоэлемента before со следующими стилями */
+.custom-checkbox > span::before {
+    content: "";
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    margin-right: 0.5em;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+    background-color: #97979742;
+}
+
+/* стили для чекбокса, находящегося в состоянии checked */
+.custom-checkbox > input:checked + span::before {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
 }

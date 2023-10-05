@@ -1,9 +1,9 @@
 .cart {
     padding-left: 15px;
     border-left: 1px solid #ffffff1a;
-    & > img {
-        width: 29px;
-        height: 29px;
+    cursor: pointer;
+    &:hover path {
+        fill: #1E98FF;;
     }
     &__modal {
         display: none;

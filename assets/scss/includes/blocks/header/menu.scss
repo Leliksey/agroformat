@@ -3,32 +3,23 @@
     align-items: center;
     justify-content: space-between;
     column-gap: 10px;
+    margin: 0 50px;
+    width: 100%;
     &__item {
         display: flex;
         align-items: center;
-        column-gap: 5px;
+        column-gap: 6px;
         cursor: pointer;
         position: relative;
-        &.arrow::after {
-            background-image: url("data:image/svg+xml,%3Csvg width='11' height='7' viewBox='0 0 11 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.95544 6.40963L0.225765 1.67979C-0.0752554 1.37892 -0.0752554 0.8911 0.225765 0.590371C0.526517 0.289618 1.01431 0.289618 1.31504 0.590371L5.50008 4.77554L9.68498 0.590493C9.98585 0.289741 10.4736 0.289741 10.7743 0.590493C11.0752 0.891246 11.0752 1.37904 10.7743 1.67991L6.04459 6.40975C5.89414 6.56012 5.69717 6.63523 5.5001 6.63523C5.30294 6.63523 5.10582 6.55998 4.95544 6.40963Z' fill='white'/%3E%3C/svg%3E%0A");
-            width: 13px;
-            height: 7px;
-            background-size: contain;
-            background-repeat: no-repeat;
-        }
-        &.home::before {
-            background-image: url("data:image/svg+xml,%3Csvg width='17' height='16' viewBox='0 0 17 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.4787 5.65839L15.9708 7.93607C16.272 8.2152 16.186 8.43039 15.7777 8.43039H13.9083V14.3814C13.9083 14.7898 13.5646 15.1548 13.1562 15.1548H9.91191V10.9865C9.91191 10.5781 9.54684 10.2131 9.13847 10.2131H7.09728C6.68891 10.2131 6.32385 10.5781 6.32385 10.9865V15.1548H3.07953C2.67116 15.1548 2.3061 14.7898 2.3061 14.3814V8.43039H0.458095C0.0497204 8.43039 -0.0362171 8.2152 0.264908 7.93607L7.54828 1.31889C7.84941 1.03976 8.36503 1.03976 8.68678 1.31889L10.3409 2.80114V1.61932C10.3409 1.21095 10.706 0.845886 11.1143 0.845886H12.7258C13.1342 0.845886 13.478 1.21095 13.478 1.61932L13.4787 5.65839Z' fill='%23088AF8'/%3E%3C/svg%3E%0A");
-            width: 22px;
-            height: 20px;
-            background-size: contain;
-            background-repeat: no-repeat;
-        }
         & > span {
             font-size: 14px;
             font-weight: 400;
             line-height: 17px;
             letter-spacing: 0.05em;
             color: #fff;
+            text-transform: uppercase;
+            width: max-content;
+            line-height: 65px;
         }
         & > a {
             font-size: 14px;
@@ -36,22 +27,40 @@
             line-height: 17px;
             letter-spacing: 0.05em;
             color: #fff;
+            text-transform: uppercase;
+            width: max-content;
         }
-        &:hover > span {
-            color: #2c9eff;
+        &.open > * {
+            color: #1e98ff;
+        }
+        &.open > * path {
+            fill: #1e98ff;
+        }
+        &.open .menu__item-list {
+            display: block;
         }
         &-list {
             display: none;
             position: absolute;
-            bottom: 0;
+            top: 65px;
             left: 0;
+            width: max-content;
             &__item {
                 display: flex;
                 column-gap: 17px;
                 align-items: center;
                 background-color: #313e45;
-                padding: 8px 10px;
+                padding: 8px 45px 8px 10px;
                 cursor: pointer;
+                & .white {
+                    display: none;
+                }
+                &:hover .white {
+                    display: block;
+                }
+                &:hover .blue {
+                    display: none;
+                }
                 &:hover {
                     background-color: #088af8;
                 }
@@ -65,6 +74,7 @@
                     line-height: 17px;
                     color: #fff;
                     text-transform: uppercase;
+                    min-width: max-content;
                 }
             }
         }
