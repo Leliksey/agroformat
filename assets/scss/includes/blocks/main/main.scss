@@ -1,0 +1,94 @@
+.main {
+    &__slider {
+        position: relative;
+        touch-action: none;
+        &-item {
+            position: relative;
+            &__imgbox {
+                position: relative;
+            }
+        }
+    }
+    &_bg {
+        &_shadow {
+            position: absolute;
+            z-index: 10;
+            left: 0;
+            bottom: 0;
+        }
+    }
+    &__info {
+        background: linear-gradient(180deg, rgba(49, 62, 69, 0.9) 20.31%, rgba(49, 62, 69, 0) 100%);
+        max-width: 688px;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 10%;
+        z-index: 15;
+        padding: 10px 55px 15px 30px;
+        &-title {
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 35px;
+            color: #fff;
+            text-transform: uppercase;
+        }
+        &-desc {
+            font-size: 20px;
+            font-weight: 200;
+            line-height: 25px;
+            color: #fff;
+            margin-top: 10px;
+        }
+        &-group {
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            border: 1px solid #088AF8;
+            padding-left: 16px;
+            &__price {
+                font-size: 24px;
+                font-weight: 700;
+                line-height: 30px;
+                color: #088af8;
+            }
+            &__btn {
+                padding: 16px 25px;
+                background-color: #088af8;
+                color: #fff;
+                text-transform: uppercase;
+                display: flex;
+                align-items: center;
+                & img {
+                    margin-left: 10px;
+                    width: 17px;
+                    height: 17px;
+                }
+            }
+        }
+        &-params {
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+        }
+        &-param {
+            display: grid;
+            justify-items: center;
+            row-gap: 8px;
+            border-left: 1px solid #64707d;
+            padding: 35px;
+            height: 90px;
+            &__text {
+                font-size: 14px;
+                font-weight: 300;
+                line-height: 17px;
+                color: #fff;
+            }
+        }
+        &-param:last-child {
+            border-right: 1px solid #64707d;
+        }
+    }
+}

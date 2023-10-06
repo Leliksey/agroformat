@@ -6,13 +6,17 @@
     &:hover path {
         fill: #1e98ff;
     }
-    &__modal {
+    &.open .login__modal {
         display: block;
+    }
+    &__modal {
+        display: none;
         position: absolute;
         top: 65px;
         right: 0;
         padding: 20px;
         background-color: #313e45e5;
+        
         &-title {
             font-size: 22px;
             font-weight: 700;
@@ -22,20 +26,18 @@
             width: max-content;
         }
         & input {
-            background-color: #97979742;
-            padding: 18px 0;
+            padding: 18px;
             margin-top: 18px;
             font-size: 12px;
             font-weight: 200;
             line-height: 15px;
-            width: -webkit-fill-available;
+            width: 290px;
             color: #fff;
             border: none;
             outline: none;
+            background: #97979742;
         }
         & input::placeholder {
-            background-color: #97979742;
-            padding: 18px 20px;
             margin-top: 18px;
             font-size: 12px;
             font-weight: 200;
@@ -68,9 +70,9 @@
             }
         }
         &-form {
-            margin-top: 15px;
             max-width: 289px;
             width: 100%;
+            overflow: hidden;
             & button {
                 & img {
                     width: 22px;

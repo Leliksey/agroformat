@@ -203,6 +203,51 @@ select::-ms-expand {
 	padding: 15px;
 	width: 100%;
 	color: #fff;
-	background-color: #088AF8;
+	background-color: #088af8;
 	text-transform: uppercase;
+}
+.owl-nav {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	height: max-content;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	pointer-events: none;
+	z-index: 20;
+}
+.owl-nav span {
+	display: none;
+}
+.owl-prev {
+	background-image: url("data:image/svg+xml,%3Csvg width='104' height='50' viewBox='0 0 104 50' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='76' height='50' transform='matrix(-1 0 0 1 76 0)' fill='%23008AFF'/%3E%3Cpath d='M47.9393 26.0607C47.3536 25.4749 47.3536 24.5251 47.9393 23.9393L57.4853 14.3934C58.0711 13.8076 59.0208 13.8076 59.6066 14.3934C60.1924 14.9792 60.1924 15.9289 59.6066 16.5147L51.1213 25L59.6066 33.4853C60.1924 34.0711 60.1924 35.0208 59.6066 35.6066C59.0208 36.1924 58.0711 36.1924 57.4853 35.6066L47.9393 26.0607ZM104 26.5H49V23.5H104V26.5Z' fill='white'/%3E%3C/svg%3E%0A");
+	width: 100px;
+	height: 50px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	pointer-events: all;
+	cursor: pointer;
+}
+.owl-next {
+	background-image: url("data:image/svg+xml,%3Csvg width='104' height='50' viewBox='0 0 104 50' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='76' height='50' transform='matrix(-1 0 0 1 76 0)' fill='%23008AFF'/%3E%3Cpath d='M47.9393 26.0607C47.3536 25.4749 47.3536 24.5251 47.9393 23.9393L57.4853 14.3934C58.0711 13.8076 59.0208 13.8076 59.6066 14.3934C60.1924 14.9792 60.1924 15.9289 59.6066 16.5147L51.1213 25L59.6066 33.4853C60.1924 34.0711 60.1924 35.0208 59.6066 35.6066C59.0208 36.1924 58.0711 36.1924 57.4853 35.6066L47.9393 26.0607ZM104 26.5H49V23.5H104V26.5Z' fill='white'/%3E%3C/svg%3E%0A");
+	width: 100px;
+	height: 50px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	transform: rotate(180deg);
+	pointer-events: all;
+	cursor: pointer;
+}
+.sectionTitle {
+	font-size: 35px;
+	font-weight: 700;
+	line-height: 43px;
+	color: #282828;
+	text-align: center;
+	text-transform: uppercase;
+	&_white {
+		color: #fff;
+	}
 }

@@ -3,37 +3,134 @@
     border-left: 1px solid #ffffff1a;
     cursor: pointer;
     &:hover path {
-        fill: #1E98FF;;
+        fill: #1e98ff;
+    }
+    &.open .cart__modal {
+        display: block;
     }
     &__modal {
         display: none;
+        position: absolute;
+        top: 65px;
+        right: 0;
+        background-color: #313e45e5;
+        max-width: 516px;
+        width: 100%;
+        padding: 15px 30px 25px;
     }
     &__item {
+        display: flex;
+        align-items: center;
+        padding: 15px 0 20px;
+        position: relative;
         &-group {
+            display: flex;
+            flex-direction: column;
+            row-gap: 5px;
+            margin-left: 20px;
         }
         &-remove {
             width: 10px;
             height: 10px;
+            position: absolute;
+            top: 12px;
+            left: -10px;
         }
+        &-product {
+            width: 67px;
+            height: 53px;
+        }
+    }
+    &__item:not(:first-child) {
+        border-top: 1px solid #FFFFFF4D;
     }
     &__list {
     }
     &__product-name {
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 15px;
+        color: #fff;
+        text-transform: uppercase;
+        max-width: 271px;
     }
     &__product-articul {
+        font-size: 12px;
+        font-weight: 250;
+        line-height: 15px;
+        color: #fff;
+    }
+    &__product-price {
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 17px;
+        color: #0f8cff;
+    }
+    &__product-count {
+        display: flex;
+        column-gap: 23px;
+        align-items: center;
+    }
+    &__minus {
+        font-family: Geometria;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 20px;
+        color: #088af8;
+    }
+    &__product-result {
+        font-family: Geometria;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 18px;
+        color: #fff;
+    }
+    &__plus {
+        font-family: Geometria;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 20px;
+        color: #088af8;
     }
     &__bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        column-gap: 10px;
+        margin-top: 5px;
         &-group {
+            display: flex;
+            align-items: center;
+            column-gap: 10px;
         }
         &-text {
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 20px;
+            color: #fff;
         }
         &-total {
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 20px;
+            color: #0f8cff;
         }
     }
     &__button {
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 15px;
+        color: #fff;
+        padding: 15px 12px;
+        background-color: #0f89f0;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
         & img {
             width: 16px;
             height: 16px;
+            margin-left: 12px;
+            margin-top: -2px;
         }
     }
 }
