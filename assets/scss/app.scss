@@ -15,13 +15,17 @@
 
 //main
 @import './includes/blocks/main/main.scss';
-//main
+//sliderBlock
 @import './includes/blocks/sliderBlock/sliderBlock.scss';
-//main
+//categoryWall
 @import './includes/blocks/categoryWall/categoryWall.scss';
+//tehno
+@import './includes/blocks/tehno/tehno.scss';
 
-// //service
-// @import './includes/blocks/service/service.scss';
+//partners
+@import './includes/blocks/partners/partners.scss';
+//sertificates
+@import './includes/blocks/sertificates/sertificates.scss';
 
 // //popular
 // @import './includes/blocks/popular/popular.scss';
@@ -38,8 +42,10 @@
 // //news
 // @import './includes/blocks/news/news.scss';
 
-// //reviews
-// @import './includes/blocks/reviews/reviews.scss';
+//reviews
+@import './includes/blocks/reviews/reviews.scss';
+//contacts
+@import './includes/blocks/contacts/contacts.scss';
 
 // //category
 // @import './includes/blocks/category/categorySlider.scss';
@@ -52,8 +58,8 @@
 // //recommended
 // @import './includes/blocks/recommended/recommended.scss';
 
-// //about
-// @import './includes/blocks/about/about.scss';
+//about
+@import './includes/blocks/about/about.scss';
 
 // //popup
 // @import './includes/blocks/popup/popup.scss';

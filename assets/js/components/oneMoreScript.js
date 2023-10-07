@@ -114,5 +114,100 @@ $(document).ready(function() {
             items:4,
             margin:20,
         });
+        $('.partners__slider').owlCarousel({
+            loop:true,
+            nav:true,
+            mouseDrag:true,
+            touchDrag: true,
+            pullDrag:false,
+            freeDrag:false,
+            URLhashListener:false,
+            dots:false,
+            autoplay:false,
+            items:6,
+            margin:20,
+        });
+        $('.sertificates__slider').owlCarousel({
+            loop:true,
+            nav:true,
+            mouseDrag:true,
+            touchDrag: true,
+            pullDrag:false,
+            freeDrag:false,
+            URLhashListener:false,
+            dots:false,
+            autoplay:false,
+            items:5,
+            margin:30,
+        });
+        $('.reviews__slider').owlCarousel({
+            loop:true,
+            nav:true,
+            mouseDrag:true,
+            touchDrag: true,
+            pullDrag:false,
+            freeDrag:false,
+            URLhashListener:false,
+            dots:false,
+            autoplay:false,
+            items:4,
+            margin:30,
+        });
+
+
+        
+        $(".tehno__media-btn").on("click", function() {
+            // Получаем идентификатор видео из атрибута данных
+            var videoId = $(this).data("video");
+            $(this).parent().find("video").attr("data-video", videoId)
+            // Находим соответствующее видео по идентификатору
+            var video = $(".video[data-video='" + videoId + "']")[0];
+            // Проверяем, существует ли видео и воспроизводится ли оно в данный момент
+            if (video && video.paused !== undefined) {
+              if (video.paused) {
+                // Если видео приостановлено, запускаем его
+                video.play();
+                $(this).find("svg path").attr("fill", "yellow"); // Изменяем цвет кнопки
+              } else {
+                // Если видео уже воспроизводится, останавливаем его
+                video.pause();
+                $(this).find("svg path").attr("fill", "white"); // Изменяем цвет кнопки
+              }
+            }
+          });
+
+
+        //   $('.rating').each(function() {
+        //     var $rating = $(this);
+        //     var ratingValueId = $rating.attr('id') + '-value';
+        //     var rating = 0;
+      
+        //     $rating.find('.star').on('click', function() {
+        //       var selectedRating = $(this).data('rating');
+        //       $rating.find('.star').removeClass('active');
+      
+        //       for (var i = 1; i <= selectedRating; i++) {
+        //         $rating.find('.star[data-rating="' + i + '"]').addClass('active');
+        //       }
+      
+        //       rating = selectedRating;
+        //       $('#' + ratingValueId).html('Вы поставили оценку: ' + rating);
+        //     });
+      
+        //     $rating.find('.star').hover(function() {
+        //       var selectedRating = $(this).data('rating');
+        //       $rating.find('.star').removeClass('active');
+      
+        //       for (var i = 1; i <= selectedRating; i++) {
+        //         $rating.find('.star[data-rating="' + i + '"]').addClass('active');
+        //       }
+        //     }, function() {
+        //       $rating.find('.star').removeClass('active');
+      
+        //       for (var i = 1; i <= rating; i++) {
+        //         $rating.find('.star[data-rating="' + i + '"]').addClass('active');
+        //       }
+        //     });
+        //   });
 });
 

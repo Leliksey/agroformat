@@ -1,0 +1,68 @@
+.reviews {
+    padding: 40px 40px 80px;
+    background-image: url(../images/reviews_bg.png);
+    &__content {
+    }
+    &__slider {
+        position: relative;
+        margin-top: 80px;
+        touch-action: none;
+        padding: 0 50px;
+        & .owl-nav button {
+            background-image: url("data:image/svg+xml,%3Csvg width='57' height='24' viewBox='0 0 57 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.939339 13.0607C0.353554 12.4749 0.353554 11.5251 0.939339 10.9393L10.4853 1.3934C11.0711 0.807611 12.0208 0.807611 12.6066 1.3934C13.1924 1.97919 13.1924 2.92893 12.6066 3.51472L4.12132 12L12.6066 20.4853C13.1924 21.0711 13.1924 22.0208 12.6066 22.6066C12.0208 23.1924 11.0711 23.1924 10.4853 22.6066L0.939339 13.0607ZM57 13.5H2V10.5H57V13.5Z' fill='white'/%3E%3C/svg%3E%0A");
+            width: 55px;
+            height: 25px;
+        }
+        & .owl-prev {
+            margin-left: -100px;
+        }
+        & .owl-next {
+            transform: rotate(180deg);
+            margin-right: 0px;
+        }
+    }
+    &__item {
+        background-color: #fff;
+        padding: 30px;
+        &-title {
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 20px;
+            color: #282828;
+            text-transform: uppercase;
+        }
+        &-desc {
+            font-family: Geometria;
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 20px;
+            color: #282828;
+            margin-top: 10px;
+        }
+        &-date {
+            font-family: Geometria;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 20px;
+            color: #088af8;
+            margin-top: 15px;
+        }
+        &-product {
+            font-size: 12px;
+            font-weight: 700;
+            line-height: 15px;
+            color: #282828;
+            margin-top: 8px;
+        }
+        & .rating {
+            margin-top: 8px;
+            display: flex;
+            column-gap: 5px;
+            & .star {
+                display: block;
+                font-size: 20px;
+            }
+        }
+    }
+   
+}

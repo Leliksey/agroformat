@@ -1,0 +1,66 @@
+.tehno {
+    &__row {
+        display: flex;
+        &.reverse {
+            flex-direction: row-reverse;
+            & .tehno__info {
+                background-color: #313E45;
+            }
+            & .sectionTitle {
+                color: #fff;
+            }
+            & .tehno__info-desc {
+                color: #fff;
+            }
+        }
+    }
+    &__media {
+        position: relative;
+        &-btn {
+            position: absolute;
+            right: 50px;
+            bottom: 35px;
+            cursor: pointer;
+        }
+    }
+    & img {
+        width: 50vw;
+        height: 100%;
+        object-fit: cover;
+    }
+    & video {
+        width: 50vw;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    &__info {
+        background-color: #e8e8e8;
+        padding: 60px;
+        &-desc {
+            margin-top: 20px;
+            font-family: Geometria;
+            font-size: 20px;
+            font-weight: 300;
+            line-height: 25px;
+            color: #282828;
+        }
+    }
+    &-icon {
+    }
+    &svg {
+    }
+    & .sectionTitle {
+        margin-top: 50px;
+        text-align: left;
+    }
+    
+
+    & .customLink {
+        margin-top: 30px;
+        display: block;
+        width: max-content;
+        margin-right: 0;
+        margin-left: auto;
+    }
+}
