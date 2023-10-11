@@ -1,8 +1,17 @@
 .tehno {
     &__row {
         display: flex;
+        @include max-lg{
+            flex-direction: column;
+        }
+        
         &.reverse {
             flex-direction: row-reverse;
+            @include max-lg{
+                flex-direction: row;
+                flex-direction: column;
+            }
+            
             & .tehno__info {
                 background-color: #313E45;
             }
@@ -21,22 +30,54 @@
             right: 50px;
             bottom: 35px;
             cursor: pointer;
+            @include max-sm{
+                right: 30px;
+                bottom: 20px;
+            }
+            
+            & svg {
+                @include max-lg{
+                    width: 80px;
+                    height: 45px;
+                }
+                @include max-sm{
+                    width: 60px;
+                    height: 35px;
+                }
+                
+            }
         }
     }
     & img {
         width: 50vw;
         height: 100%;
         object-fit: cover;
+        @include max-lg{
+            width: 100vw;
+        }
+        
     }
     & video {
         width: 50vw;
         height: 100%;
         object-fit: cover;
+        @include max-lg{
+            width: 100vw;
+        }
+        
     }
     
     &__info {
         background-color: #e8e8e8;
         padding: 60px;
+        @include max-lg{
+            padding: 30px;
+            margin-top: -5px;
+        }
+        @include max-md{
+            padding: 15px;
+        }
+        
         &-desc {
             margin-top: 20px;
             font-family: Geometria;
@@ -44,23 +85,52 @@
             font-weight: 300;
             line-height: 25px;
             color: #282828;
+            @include max-md{
+                margin-top: 10px;
+                font-size: 18px;
+            }
+            
+        }
+        &-icon {
+            & svg {
+                @include max-lg{
+                    width: 75px;
+                    height: 40px;
+                }
+                
+            }
         }
     }
-    &-icon {
-    }
-    &svg {
-    }
+    
+    
     & .sectionTitle {
         margin-top: 50px;
         text-align: left;
+        @include max-lg{
+            margin-top: 20px;
+        }
+        @include max-md{
+            margin-top: 10px;
+        }
+        
     }
     
 
     & .customLink {
-        margin-top: 30px;
-        display: block;
+        margin-top: 20px;
         width: max-content;
         margin-right: 0;
         margin-left: auto;
+        padding: 10px;
+        font-size: 14px;
+        @include max-sm{
+            margin-left: 0;
+            margin-right: auto;
+        }
+        
+        @include max-iph{
+            font-size: 12px;
+        }
+        
     }
 }

@@ -2,10 +2,27 @@
     padding: 0 15px;
     border-left: 1px solid #ffffff1a;
     position: relative;
+    @include max-md{
+        display: none;
+        padding: 0;
+    }
+    &__mobile {
+        display: none;
+        @include max-md{
+            display: block;
+            // padding: 20px 15px 20px 20px;
+            border-top: 1px solid #4d4a4a;
+        }
+        
+    }
     & > svg {
         width: 20px;
         height: 25px;
         cursor: pointer;
+        @include max-md{
+            display: none;
+        }
+        
     }
     & > svg:hover path {
         fill: #1e98ff;
@@ -21,6 +38,13 @@
         height: 20px;
         background-size: contain;
         background-repeat: no-repeat;
+        @include max-md{
+            top: 0;
+            bottom: 0;
+            right: 15px;
+            margin: auto;
+        }
+        
     }
     &__modal {
         display: none;
@@ -31,6 +55,17 @@
         background-color: #313e45e5;
         padding: 18px 26px;
         min-width: 377px;
+        @include max-md{
+            display: block;
+            position: relative;
+            top: 0;
+            left: 0;
+            padding: 0;
+        }
+        @include max-sm{
+            min-width: auto;
+        }
+        
         & input {
             border: 1px solid #c8c8c8e5;
             padding: 18px 22px;
@@ -44,6 +79,11 @@
             outline: none;
             display: flex;
             align-items: center;
+            @include max-md{
+                border: none;
+                padding: 20px 15px 20px 20px;
+            }
+            
         }
         & input::placeholder {
             font-size: 14px;

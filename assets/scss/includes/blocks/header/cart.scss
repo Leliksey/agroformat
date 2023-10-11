@@ -2,11 +2,22 @@
     padding-left: 15px;
     border-left: 1px solid #ffffff1a;
     cursor: pointer;
+    @include max-xxl{
+        padding-right: 15px;
+        border-right: 1px solid #ffffff1a;
+    }
+    
     &:hover path {
         fill: #1e98ff;
     }
     &.open .cart__modal {
         display: block;
+    }
+    & > svg {
+        @include max-sm{
+            width: 22px;
+            height: 22px;
+        }
     }
     &__modal {
         display: none;
@@ -126,6 +137,7 @@
         text-transform: uppercase;
         display: flex;
         align-items: center;
+        cursor: pointer;
         & img {
             width: 16px;
             height: 16px;

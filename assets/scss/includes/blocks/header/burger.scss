@@ -1,0 +1,53 @@
+.burger {
+    margin-left: 15px;
+    display: none;
+    position: relative;
+    @include max-xxl{
+        display: block;
+    }
+    @include max-sm{
+        
+    }
+    
+    &__icon svg:last-child {
+        display: none;
+    }
+    &.open .burger__icon svg:last-child {
+        display: block;
+    }
+    &.open .burger__icon svg:first-child {
+        display: none;
+    }
+    
+    &__box {
+        position: fixed;
+        top: 64px;
+        right: -300%;
+        display: block;
+        background-color: #313e45;
+        // min-width: 40vw;
+        min-width: max-content;
+        height: 100vh;
+        transition: .5s;
+        &.open {
+            transition: .5s;
+            right: -50px;
+            z-index: 100;
+            @include max-xl{
+                right: -35px;
+                // min-width: 50vw;
+            }
+            @include max-lg{
+                top: 55px;
+                // min-width: 75vw;
+            }
+            @include max-md{
+                right: 0;
+            }
+            @include max-sm{
+                top: 49px;
+                min-width: 100vw;
+            }
+        }
+    }
+}

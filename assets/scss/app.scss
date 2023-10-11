@@ -12,6 +12,7 @@
 @import './includes/blocks/header/cart.scss';
 @import './includes/blocks/header/search.scss';
 @import './includes/blocks/header/lang.scss';
+@import './includes/blocks/header/burger.scss';
 
 //main
 @import './includes/blocks/main/main.scss';
@@ -64,8 +65,8 @@
 // //popup
 // @import './includes/blocks/popup/popup.scss';
 
-// //footer
-// @import './includes/blocks/footer/footer.scss';
+//footer
+@import './includes/blocks/footer/footer.scss';
 
 
 

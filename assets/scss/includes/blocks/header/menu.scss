@@ -5,12 +5,42 @@
     column-gap: 10px;
     margin: 0 50px;
     width: 100%;
+    @include max-xxxl{
+        margin: 0 30px;
+    }
+    @include max-xxl{
+        display: none;
+        margin: 0;
+    }
+    &__mobile {
+        display: block;
+        width: max-content;
+        border-top: 1px solid #4d4a4a;
+        @include max-xxl{
+            padding: 10px 100px 10px 20px;
+        }
+        @include max-xl{
+            padding: 10px 70px 10px 20px;
+        }
+        
+        @include max-sm{
+            width: 100%;
+            padding-right: 15px;
+        }
+        
+        
+    }
     &__item {
         display: flex;
         align-items: center;
         column-gap: 6px;
         cursor: pointer;
         position: relative;
+        @include max-xxl{
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        
         & > span {
             font-size: 14px;
             font-weight: 400;
@@ -20,6 +50,16 @@
             text-transform: uppercase;
             width: max-content;
             line-height: 65px;
+            @include max-xxl{
+                display: flex;
+                column-gap: 10px;
+                align-items: center;
+            }
+            @include max-sm{
+                width: auto;
+                line-height: 40px;
+            }
+            
         }
         & > a {
             font-size: 14px;
@@ -29,6 +69,16 @@
             color: #fff;
             text-transform: uppercase;
             width: max-content;
+            @include max-xxl{
+                line-height: 65px;
+            }
+            @include max-md{
+                font-size: 16px;
+            }
+            @include max-sm{
+                line-height: 40px;
+            }
+            
         }
         &.open > * {
             color: #1e98ff;
@@ -45,6 +95,11 @@
             top: 65px;
             left: 0;
             width: max-content;
+            @include max-xxl{
+                position: relative;
+                top: 0;
+            }
+            
             &__item {
                 display: flex;
                 column-gap: 17px;
@@ -52,6 +107,14 @@
                 background-color: #313e45;
                 padding: 8px 45px 8px 10px;
                 cursor: pointer;
+                @include max-md{
+                    column-gap: 10px;
+                }
+                @include max-iph{
+                    padding: 8px 45px 8px 0;
+                    column-gap: 5px;
+                }
+                
                 & .white {
                     display: none;
                 }
@@ -67,6 +130,10 @@
                 & img {
                     max-width: 58px;
                     max-height: 32px;
+                    @include max-sm{
+                        max-width: 40px;
+                    }
+                    
                 }
                 & span {
                     font-size: 14px;
@@ -75,8 +142,45 @@
                     color: #fff;
                     text-transform: uppercase;
                     min-width: max-content;
+                    @include max-iph{
+                        font-size: 12px;
+                    }
+                    
                 }
             }
         }
+        &.home {
+            @include max-xxl{
+                display: none;
+            }
+            
+        }
+    }
+}
+.menu__mob {
+    display: none;
+}
+@media (max-width: 1850px) {
+    .menu__mob {
+        display: block;
+    }
+    .menu__desctop {
+        display: none;
+    }
+}
+@media (max-width: 1440px) {
+    .menu__desctop {
+        display: block;
+    }
+}
+.menu__mob_cut {
+    display: none !important;
+}
+@media (max-width: 410px) {
+    .menu__mob_full {
+        display: none !important;
+    }
+    .menu__mob_cut {
+        display: block !important;
     }
 }

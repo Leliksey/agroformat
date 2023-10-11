@@ -1,8 +1,16 @@
 $(document).ready(function() {
-    $(".menu__item").click(function() {
-        $(".menu__item").removeClass("open");
-        $(this).addClass("open");
-    })
+    if ($(window).width() > 1440 ) {
+        $(".menu__item").click(function() {
+            $(".menu__item").removeClass("open");
+            $(this).addClass("open");
+        })
+    } else {
+        $(".menu__item span").click(function(e) {
+                e.stopPropagation()
+                $(this).siblings(".menu__item-list").slideToggle();
+        })
+    }
+    
     $(".lang").click(function(e) {
         if($(e.target).hasClass("lang__list")){
             return;
@@ -33,7 +41,7 @@ $(document).ready(function() {
     });
     
     $('.search svg').on('click', function(event) {
-        event.stopPropagation(); // Предотвращаем всплытие события
+        //event.stopPropagation(); // Предотвращаем всплытие события
         $('.search').toggleClass('open');
     });
     $(document).on('click', function(event) {
@@ -54,7 +62,7 @@ $(document).ready(function() {
     });
     
     $('.login svg').on('click', function(event) {
-        event.stopPropagation(); // Предотвращаем всплытие события
+        //event.stopPropagation(); // Предотвращаем всплытие события
         $('.login').toggleClass('open');
     });
     $(document).on('click', function(event) {
@@ -68,7 +76,9 @@ $(document).ready(function() {
         $('.cart').toggleClass('open');
     });
     
-
+    $('.cart__modal').on('click', function(event) {
+        event.stopPropagation(); // Остановить "всплытие" события, чтобы оно не попало на document
+    });
         $('.cart__minus').on('click', function() {
             var resultElement = $(this).siblings('.cart__product-result');
             var currentValue = parseInt(resultElement.text());
@@ -82,12 +92,10 @@ $(document).ready(function() {
             var currentValue = parseInt(resultElement.text());
             resultElement.text(currentValue + 1);
         });
-        
-        $(document).on('click', function(event) {
-            if (!$(event.target).closest('.cart__modal').length) {
-                $('.cart').removeClass('open');
-            }
-        });
+        $(".header__content > div").click(function() {
+            $(".header__content > div").removeClass("open");
+            $(this).addClass("open");
+        })
         
         $('.main__slider').owlCarousel({
             loop:true,
@@ -111,9 +119,53 @@ $(document).ready(function() {
             URLhashListener:false,
             dots:false,
             autoplay:false,
-            items:4,
             margin:20,
+            responsive:{
+                0:{
+                    items:1
+                },
+                768:{
+                    items:3,
+                    margin: 15
+                },
+                1200:{
+                    items:4,
+                }
+            }
         });
+        if($(window).width() < 769) {
+            $('.slider__slider').owlCarousel('destroy')
+        }
+        $(window).on("resize", function() {
+            if($(window).width() < 769) {
+                $('.slider__slider').owlCarousel('destroy')
+            } else {
+                $('.slider__slider').owlCarousel({
+                    loop:true,
+                    nav:true,
+                    mouseDrag:true,
+                    touchDrag: true,
+                    pullDrag:false,
+                    freeDrag:false,
+                    URLhashListener:false,
+                    dots:false,
+                    autoplay:false,
+                    margin:20,
+                    responsive:{
+                        0:{
+                            items:1
+                        },
+                        768:{
+                            items:3,
+                            margin: 15
+                        },
+                        1200:{
+                            items:4,
+                        }
+                    }
+                });
+            }
+        })
         $('.partners__slider').owlCarousel({
             loop:true,
             nav:true,
@@ -124,9 +176,112 @@ $(document).ready(function() {
             URLhashListener:false,
             dots:false,
             autoplay:false,
-            items:6,
             margin:20,
+            responsive:{
+                0:{
+                    items:1
+                },
+                768:{
+                    items:3,
+                    margin: 15
+                },
+                1200:{
+                    items:5,
+                },
+                1440:{
+                    items:6,
+                }
+            }
         });
+        if($(window).width() < 769) {
+            $('.partners__slider').owlCarousel('destroy');
+            $('.partners__slider').slick({
+                dots: true,
+                infinite: true,
+                speed: 300,
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                rows: 2,
+                responsive: [
+                {
+                    breakpoint: 576,
+                    settings: {
+                    slidesToShow: 2,
+                    },
+                },
+                {
+                    breakpoint: 375,
+                    settings: {
+                    slidesToShow: 2,
+                    arrows: true,
+                    },
+                },
+                // You can unslick at a given breakpoint now by adding:
+                // settings: "unslick"
+                // instead of a settings object
+                ],
+            });
+        }
+        $(window).on('resize', function() {
+            if($(window).width() < 769) {
+                $('.partners__slider').owlCarousel('destroy');
+                $('.partners__slider').slick({
+                    dots: true,
+                    infinite: true,
+                    speed: 300,
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    rows: 2,
+                    responsive: [
+                    {
+                        breakpoint: 576,
+                        settings: {
+                        slidesToShow: 2,
+                        },
+                    },
+                    {
+                        breakpoint: 375,
+                        settings: {
+                        slidesToShow: 2,
+                        arrows: true,
+                        },
+                    },
+                    // You can unslick at a given breakpoint now by adding:
+                    // settings: "unslick"
+                    // instead of a settings object
+                    ],
+                });
+            } else {
+                $('.partners__slider').slick('unslick');
+                $('.partners__slider').owlCarousel({
+                    loop:true,
+                    nav:true,
+                    mouseDrag:true,
+                    touchDrag: true,
+                    pullDrag:false,
+                    freeDrag:false,
+                    URLhashListener:false,
+                    dots:false,
+                    autoplay:false,
+                    margin:20,
+                    responsive:{
+                        0:{
+                            items:1
+                        },
+                        768:{
+                            items:3,
+                            margin: 15
+                        },
+                        1200:{
+                            items:5,
+                        },
+                        1440:{
+                            items:6,
+                        }
+                    }
+                });
+            }
+        })
         $('.sertificates__slider').owlCarousel({
             loop:true,
             nav:true,
@@ -139,7 +294,57 @@ $(document).ready(function() {
             autoplay:false,
             items:5,
             margin:30,
+            responsive:{
+                0:{
+                    items:1
+                },
+                576:{
+                    items:3,
+                    margin: 15
+                },
+                1200:{
+                    items:5,
+                },
+                1440:{
+                    items:6,
+                }
+            }
         });
+        if ($(window).width() < 769) {
+            $('.sertificates__slider').owlCarousel('destroy')
+            $('.sertificates__slider').slick({
+                dots: true,
+                infinite: true,
+                speed: 300,
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                responsive: [
+                {
+                    breakpoint: 450,
+                    settings: {
+                    slidesToShow: 1,
+                    },
+                },
+                {
+                    breakpoint: 576,
+                    settings: {
+                    slidesToShow: 2,
+                    },
+                },
+                {
+                    breakpoint: 375,
+                    settings: {
+                    slidesToShow: 2,
+                    arrows: true,
+                    },
+                },
+                // You can unslick at a given breakpoint now by adding:
+                // settings: "unslick"
+                // instead of a settings object
+                ],
+            })
+        }
+        
         $('.reviews__slider').owlCarousel({
             loop:true,
             nav:true,
@@ -209,5 +414,11 @@ $(document).ready(function() {
         //       }
         //     });
         //   });
+
+        $(".burger svg").on("click", function(e) {
+            e.stopPropagation();
+            $(".burger").toggleClass("open");
+            $(".burger__box").toggleClass("open");
+        })
 });
 

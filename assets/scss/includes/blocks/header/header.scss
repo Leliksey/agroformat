@@ -1,18 +1,53 @@
 .header {
     background-color: #313e45;
+    @include max-xxl{
+        padding: 10px 0;
+    }
+    
     &__content {
         display: flex;
         align-items: center;
+        @include max-xxl{
+            justify-content: flex-end;
+        }
+        
+        & > div:first-child {
+            @include max-xxl{
+                margin-left: 0;
+                margin-right: auto;
+            }
+            
+        }
     }
     &__logo {
         max-width: 278px;
         width: 100%;
         min-width: 100px;
         max-height: 44px;
+        @include max-lg{
+            max-width: 200px;
+        }
+        @include max-sm{
+            max-width: 160px;
+        }
+        
     }
     &__group {
         display: flex;
         align-items: center;
+        @include max-md{
+            display: none;
+        }
+        &_mobile {
+            display: none;
+            @include max-md{
+                display: flex;
+                justify-content: space-between;
+                border-top: 1px solid #4d4a4a;
+                padding: 20px 0 20px 20px;
+            }
+            
+        }
         & .telefones__box {
             display: flex;
             align-items: center;
@@ -31,6 +66,7 @@
             margin-right: 50px;
             align-items: flex-start;
             justify-content: center;
+
             & a {
                 font-size: 12px;
                 font-weight: 400;
@@ -39,17 +75,71 @@
                 color: #fff;
                 display: block;
                 width: max-content;
+                @include max-md{
+                    font-size: 16px;
+                    line-height: 22px;
+                }
+                
             }
             & a:hover {
                 color: #1E98FF;
             }
         }
     }
+    &__contacts {
+        display: flex;
+        flex-direction: column;
+        row-gap: 12px;
+        padding: 20px 15px 20px 20px;
+        border-top: 1px solid #4d4a4a;
+        & .contacts__socials {
+            flex-wrap: wrap;
+        }
+    }
+    &__contact {
+        color: #fff;
+        display: flex;
+        column-gap: 10px;
+        &-phones {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    &__contact * {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 19px;
+        text-transform: uppercase;
+        
+    }
+    &__contact.address {
+        display: flex;
+        max-width: 270px;
+        & svg {
+            min-width: 19px;
+        }
+    }
+    &__contact.mail {
+
+    }
+    
+    &__contact.time {
+        max-width: 300px;
+        flex-direction: row;
+        & svg {
+            min-width: 18px;
+        }
+    }
+    
 }
 
 
 
 
 
-
+@media (max-width: 1650px) {
+    .header__group .telefones {
+        margin-right: 30px;
+    }
+}
 

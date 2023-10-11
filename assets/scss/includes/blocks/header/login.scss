@@ -9,6 +9,12 @@
     &.open .login__modal {
         display: block;
     }
+    & > svg {
+        @include max-sm{
+            width: 22px;
+            height: 22px;
+        }
+    }
     &__modal {
         display: none;
         position: absolute;

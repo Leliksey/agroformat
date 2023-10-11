@@ -229,6 +229,14 @@ select::-ms-expand {
 	background-repeat: no-repeat;
 	pointer-events: all;
 	cursor: pointer;
+	@include max-xxl{
+		width: 70px;
+		height: 35px;
+	}
+	@include max-md{
+		display: none;
+	}
+	
 }
 .owl-next {
 	transform: rotate(180deg);
@@ -243,13 +251,26 @@ select::-ms-expand {
 	&_white {
 		color: #fff;
 	}
+	@include max-xl{
+		font-size: 30px;
+		line-height: 35px;
+	}
+	@include max-lg{
+		font-size: 25px;
+		line-height: 30px;
+	}
+	@include max-md{
+		font-size: 20px;
+		line-height: 25px;
+	}
+	
 }
 .customLink {
 	background-color: #088AF8;
 	padding: 16px;
 	color: #fff;
 	text-transform: uppercase;
-	display: block;
+	display: flex;
 	max-width: max-content;
 	& svg {
 		margin-left: 15px;
@@ -267,4 +288,21 @@ select::-ms-expand {
   
   .star.active {
     color: #F3C436;
+  }
+  .slick-dots {
+	display: flex;
+	justify-content: center;
+	column-gap: 5px;
+  }
+  .slick-dots li {
+	width: 15px;
+	height: 15px;
+	background-color: #fff;
+	border: 2px solid #DCDCDC;
+	&.slick-active {
+		background-color: #088AF8;
+	}
+  }
+  .slick-dots button {
+	display: none;
   }
