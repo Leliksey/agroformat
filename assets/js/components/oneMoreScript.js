@@ -353,10 +353,24 @@ $(document).ready(function() {
             pullDrag:false,
             freeDrag:false,
             URLhashListener:false,
-            dots:false,
+            dots:true,
             autoplay:false,
-            items:4,
             margin:30,
+            responsive:{
+                0:{
+                    items:1
+                },
+                576:{
+                    items:2,
+                    margin: 15
+                },
+                992:{
+                    items:3,
+                },
+                1440:{
+                    items:4,
+                }
+            }
         });
 
 

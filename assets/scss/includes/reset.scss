@@ -289,17 +289,19 @@ select::-ms-expand {
   .star.active {
     color: #F3C436;
   }
+  .owl-dots,
   .slick-dots {
 	display: flex;
 	justify-content: center;
 	column-gap: 5px;
   }
+  .owl-dots button,
   .slick-dots li {
 	width: 15px;
 	height: 15px;
 	background-color: #fff;
 	border: 2px solid #DCDCDC;
-	&.slick-active {
+	&.slick-active,  &.active{
 		background-color: #088AF8;
 	}
   }
