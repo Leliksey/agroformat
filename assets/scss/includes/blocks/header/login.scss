@@ -3,7 +3,7 @@
     border-left: 1px solid #ffffff1a;
     cursor: pointer;
     position: relative;
-    &:hover path {
+    &:hover > svg path {
         fill: #1e98ff;
     }
     &.open .login__modal {
@@ -22,6 +22,17 @@
         right: 0;
         padding: 20px;
         background-color: #313e45e5;
+        @include max-md{
+            background-color: #313e45;
+        }
+        
+        @include max-sm{
+            position: fixed;
+            left: 0;
+            margin: auto;
+            width: max-content;
+            
+        }
         
         &-title {
             font-size: 22px;
@@ -89,9 +100,11 @@
         &-customButton {
             margin-top: 20px;
             position: relative;
+            cursor: pointer;
             & img {
                 position: absolute;
                 right: 20px;
+                z-index: 10;
             }
         }
         &-text {
@@ -103,6 +116,10 @@
                 border-bottom: 1px solid #fff;
                 color: #0E90FF;
                 border-color: #0E90FF;
+                &:hover {
+                    color: #0DCA2C;
+                    border-color: #0DCA2C;
+                }
             }
         }
     }
@@ -116,11 +133,53 @@
 }
 .cabinet {
     display: none;
+    position: absolute;
+    top: 65px;
+    right: 0;
+    z-index: 25;
+    padding: 20px 0 0;
+    background-color: #313e45e5;
+    min-width: 300px;
+    width: 100%;
+    text-align: center;
+    & * {
+        color: #fff;
+    }
+    &__title {
+        padding: 0 20px 20px;
+        border-bottom: 1px solid #FFFFFF4D;
+    }
+    &__list {
+        width: max-content;
+        margin: auto;
+    }
+    &__item:not(:first-child) {
+        border-top: 1px solid #FFFFFF4D;
+    }
     &__link {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 20px 10px;
+        column-gap: 10px;
+        
         & img {
             width: 30px;
             height: 25px;
         }
+    }
+    &__link:hover * {
+        color: #0E90FF;
+        fill: #0E90FF;
+    }
+    &__link .out_blue {
+        display: none;
+    }
+    &__link:hover .out_blue {
+        display: block;
+    }
+    &__link:hover .out_white {
+        display: none;
     }
 }
 /* для элемента input c type="checkbox" */

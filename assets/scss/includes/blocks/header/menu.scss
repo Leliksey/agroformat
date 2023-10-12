@@ -41,6 +41,12 @@
             align-items: flex-start;
         }
         
+        &:hover > svg path {
+            fill: #088af8;
+        }
+        &:hover > span {
+            color: #088af8;
+        }
         & > span {
             font-size: 14px;
             font-weight: 400;
@@ -60,6 +66,9 @@
                 line-height: 40px;
             }
             
+        }
+        &:hover > a {
+            color: #088af8;
         }
         & > a {
             font-size: 14px;
@@ -94,7 +103,7 @@
             position: absolute;
             top: 65px;
             left: 0;
-            width: max-content;
+            min-width: max-content;
             @include max-xxl{
                 position: relative;
                 top: 0;
@@ -109,6 +118,7 @@
                 cursor: pointer;
                 @include max-md{
                     column-gap: 10px;
+                    padding: 8px 30px 8px 10px;
                 }
                 @include max-iph{
                     padding: 8px 45px 8px 0;
@@ -127,6 +137,7 @@
                 &:hover {
                     background-color: #088af8;
                 }
+                
                 & img {
                     max-width: 58px;
                     max-height: 32px;

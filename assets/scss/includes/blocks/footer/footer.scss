@@ -1,17 +1,78 @@
 .footer {
     background-color: #313e45;
     padding: 60px 0;
+    @include max-xl{
+        padding: 40px 0;
+    }
+    @include max-sm{
+        padding: 0 0 40px;
+    }
+    
     &__content {
         display: flex;
         column-gap: 40px;
         justify-content: space-between;
+        @include max-xxl{
+            
+        }
+        
+        @include max-xl{
+            column-gap: 25px;
+        }
+        @include max-lg{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            row-gap: 40px;
+        }
+        @include max-md{
+            column-gap: 15px;
+        }
+        @include max-sm{
+            grid-template-columns: 1fr;
+            row-gap: 0;
+        }
+        
     }
     &__column {
         display: flex;
         flex-direction: column;
         row-gap: 8px;
+        @include max-sm{
+            padding: 22px 0 22px 20px;
+            position: relative;
+        }
+        & > svg {
+            position: absolute;
+            top: 25px;
+            right: 20px;
+            margin: auto;
+            display: none;
+            @include max-sm{
+                display: block;
+            }
+            
+        }
         &.pages * {
             width: max-content;
+        }
+        &.pages ul {
+            display: flex;
+            flex-direction: column;
+            row-gap: 5px;
+            @include max-sm{
+                display: none;
+            }
+        }
+        &.common {
+            @include max-xxl{
+                display: none;
+            }
+            
+        }
+    }
+    &__column:not(:first-child) {
+        @include max-sm{
+            border-top: 1px solid #fff;
         }
     }
     &__title {
@@ -20,6 +81,21 @@
         line-height: 20px;
         color: #fff;
         text-transform: uppercase;
+        @include max-xl{
+            font-size: 14px;
+        }
+        &_mobile {
+            display: none;
+            @include max-sm{
+                display: block;
+            }
+        }
+        &.mob_hide {
+            @include max-sm{
+                display: none;
+            }
+            
+        }
         &-short {
             max-width: 200px;
         }
@@ -28,8 +104,16 @@
         display: flex;
         flex-direction: column;
         row-gap: 8px;
+        @include max-sm{
+            display: none;
+        }
+        
     }
-    &__item {
+    &__item:not(:first-child) {
+        @include max-sm{
+            margin-top: 10px;
+        }
+        
     }
     &__link {
         font-size: 14px;
@@ -61,6 +145,10 @@
     &__contact.address {
         display: flex;
         max-width: 270px;
+        @include max-sm{
+            max-width: 100%;
+        }
+        
         & svg {
             min-width: 19px;
         }
@@ -68,21 +156,57 @@
     &__contact.mail {
 
     }
-    &__socials {
-    }
     &__contact.time {
         max-width: 300px;
         flex-direction: row;
+        @include max-sm{
+            max-width: 220px;
+        }
+        
         & svg {
             min-width: 18px;
+        }
+        &.additional {
+            display: none;
+            @include max-xxl{
+                display: flex;
+            }
+            
         }
     }
 
 }
-.footer .contacts__social svg {
+.footer .contacts__social svg { 
     width: 30px;
     height: 30px;
 }
 .footer .contacts__socials {
     margin-top: 10px;
+    @include max-xxl{
+        display: flex;
+        flex-wrap: wrap;
+
+        max-width: 300px;
+        row-gap: 10px;
+        column-gap: 20px;
+        @include max-sm{
+            flex-wrap: nowrap;
+            column-gap: 0;
+            justify-content: space-between;
+        }
+        
+    }
+    
+}
+
+.footer__pages-links[style*="display: block"] {
+    display: flex !important;
+}
+.footer__pages-links .footer__title {
+   @include max-sm{
+    font-size: 12px;
+    text-transform: capitalize;
+    font-weight: 200;
+   }
+   
 }

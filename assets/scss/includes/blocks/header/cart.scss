@@ -28,6 +28,20 @@
         max-width: 516px;
         width: 100%;
         padding: 15px 30px 25px;
+        @include max-xxl{
+            top: 64px;
+        }
+        @include max-lg{
+            top: 56px;
+        }
+        @include max-md{
+            background-color: #313e45;
+        }
+        @include max-sm{
+            top: 49px;
+        }
+        
+        
     }
     &__item {
         display: flex;
@@ -143,6 +157,7 @@
             height: 16px;
             margin-left: 12px;
             margin-top: -2px;
+            z-index: 10;
         }
     }
 }

@@ -429,10 +429,52 @@ $(document).ready(function() {
         //     });
         //   });
 
-        $(".burger svg").on("click", function(e) {
+        $(".burger__icon svg:first-child").on("click", function(e) {
             e.stopPropagation();
-            $(".burger").toggleClass("open");
-            $(".burger__box").toggleClass("open");
+            $(".burger").addClass("open");
+            $(".burger__box").addClass("open");
+        });
+        $(".burger__icon svg:last-child").on("click", function(e) {
+            e.stopPropagation();
+            $(".burger").removeClass("open");
+            $(".burger__box").removeClass("open");
+        });
+        $(".burger__box").click(function() {
+            $(".burger").addClass("open");
         })
+        $(".footer__column").click(function() {
+            $(this).find(".footer__list").slideToggle();
+            $(this).find(".footer__pages-links").slideToggle();
+            $(this).find("svg").toggleClass("revert180");
+        });
+
+        // Получаем кнопку "Наверх"
+            var scrollTopButton = document.getElementById("scrollTopButton");
+
+            // При скролле страницы, проверяем, когда показывать/скрывать кнопку
+            window.onscroll = function() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollTopButton.style.display = "block";
+            } else {
+                scrollTopButton.style.display = "none";
+            }
+            };
+
+            // Плавная прокрутка страницы вверх при клике на кнопку
+            scrollTopButton.addEventListener("click", function() {
+            scrollToTop();
+            });
+
+            // Функция для плавной прокрутки вверх
+            function scrollToTop() {
+            var currentPosition = document.documentElement.scrollTop || document.body.scrollTop;
+
+            if (currentPosition > 0) {
+                window.requestAnimationFrame(scrollToTop);
+                window.scrollTo(0, currentPosition - currentPosition / 10); // Регулируйте "8" для более медленной или более быстрой прокрутки
+            }
+            }
+
+
 });
 
